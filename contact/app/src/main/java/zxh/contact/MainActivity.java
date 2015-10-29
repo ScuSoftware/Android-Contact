@@ -41,12 +41,12 @@ public class MainActivity extends Activity {
         for (TextSMSModel mode : smsAdapter.getSmsData()){
             sms_sb.append(mode.getBody()+"\n");
         }
-        FileUtil.save("message.text", sms_sb.toString(), this);
+        FileUtil.saveToSDCard("message.text", sms_sb.toString());
 
         StringBuffer contact_sb = new StringBuffer();
         for (ContactModel model : contactAdapter.getContactData()){
             contact_sb.append(model.getName()+":"+model.getPhone()+"\n");
         }
-        FileUtil.save("contact.txt", contact_sb.toString(), this);
+        FileUtil.saveToSDCard("contact.txt", contact_sb.toString());
     }
 }
